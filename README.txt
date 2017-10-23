@@ -14,13 +14,15 @@ DOCUMENTATION
 The primary documentation for this software is located in the documentaton/ directory. 
 This documentation consists of:
 ---BEEDA_user_guide
-The main technical guide for installing, using, and troubleshooting this toolbox. 
----BEEDA_manuscript_proof
-A proof of the submitted manuscript for this software. 
----Schneider_2003
-A useful guide for evaluating respiration artifacts.
+The main technical guide for installing, using, and troubleshooting this toolbox.
 ---BEEDA_psychonomics_poster
-Poster for this software presented at the 2017 Psychonomic Society, Boston, Massachusetts. 
+Poster for this software presented at the 2017 Psychonomic Society, Boston, Massachusetts.  
+---BEEDA_manuscript_proof
+This document contains a link to the submitted manuscript for this software. This link 
+will be added shortly. 
+---Schneider_2003
+A useful guide for evaluating respiration artifacts. This document contains the DOI link 
+and reference for that guide.
 ------------------------------------------------------------------------------------------
 DEMO DATA
 Example raw data can be downloaded at 

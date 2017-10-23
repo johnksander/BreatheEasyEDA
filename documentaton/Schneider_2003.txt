@@ -1,0 +1,6 @@
+A useful guide for evaluating respiration artifacts:
+
+https://doi.org/10.2466/pr0.2003.93.3.907
+
+Schneider, R., Schmidt, S., Binder, M., Schafer, F., and Walach, H. (2003).Respiration-related artifacts in EDA recordings: introducing a standardized 
+method to overcome multiple interpretations. Psychol. Rep. 93, 907–920.
