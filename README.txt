@@ -16,7 +16,7 @@ This documentation consists of:
 ---BEEDA_user_guide
 The main technical guide for installing, using, and troubleshooting this toolbox.
 ---BEEDA_psychonomics_poster
-Poster for this software presented at the 2017 Psychonomic Society, Boston, Massachusetts.  
+Poster for this software presented at the 2016 Psychonomic Society, Boston, Massachusetts.  
 ---BEEDA_manuscript_proof
 This document contains a link to the submitted manuscript for this software. This link 
 will be added shortly. 
