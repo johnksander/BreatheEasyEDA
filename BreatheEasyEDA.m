@@ -3,6 +3,7 @@ function BreatheEasyEDA
 % Written by John C Ksander and Christopher R Madan
 % Please see the accompanying documentation with this software. 
 %
+% Copyright (C) 2016 Ksander & Madan
 %
 % This program is free software: you can redistribute it and/or 
 % modify it under the terms of the GNU General Public License as 
