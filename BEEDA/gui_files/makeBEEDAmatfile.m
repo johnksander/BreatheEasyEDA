@@ -1,34 +1,29 @@
-function BEEDAdata = makeBEEDAmatfile(MWdata,eventfile)
+function BEEDAdata = makeBEEDAmatfile(BLdata,eventfile)
 %-------------------------------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------------------------------
 %
-% makeBEEDAmatfile(MWdata,eventfile,matfile_savename)
+%makeBEEDAmatfile(BLdata,eventfile)
 %
-%---- MWdata is the .txt data file exported from biolab
-%---- MWdata should be a .txt file with at least three columns, where the
+%---- BLdata is the .txt data file exported from biolab
+%---- BLdata should be a .txt file with at least three columns, where the
 % first col is the sample time, second col is EDA response data, and the
 % third col is respiration data.
 %
 %---- eventfile is the experiment event.txt file containing event names
-% and timestamps
-%
-%---- leda_scrlist is the .mat file from Ledalab's Export SCR-List
-%
-%---- matfile_savename is the name you want to save the BEEDA matfile as
-%
+% and timestamps (also biolab format) 
 %
 % FUNCTION USEAGE:
-%      makeBEEDAmatfile('MW_110_data.txt','110_1_event.txt','110_Ledadata_scrlist.mat','110_BEEDAfile')
+%      makeBEEDAmatfile('subject_110_data.txt','subject_110_events.txt')
 %
 %-------------------------------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------------------------------
 
 disp(sprintf('reading in data file'))
-MWdata = dlmread(MWdata,'',2,0);%skip headers
-MWdata = MWdata(:,1:3); %cols (1 = timepoint) (2 = EDA) (3 = respiration)
-MWdata(:,2)= (MWdata(:,2)*10);
+BLdata = dlmread(BLdata,'',2,0);%skip headers
+BLdata = BLdata(:,1:3); %cols (1 = timepoint) (2 = EDA) (3 = respiration)
+BLdata(:,2)= (BLdata(:,2)*10);
 %--- output SC data is off by a decimal point
 
 disp(sprintf('reading in event file'))
@@ -72,9 +67,9 @@ start_time = repmat(start_time,numel(event_times(:,1)),1);
 event_times = etime(event_times,start_time);%--- calculate difference in seconds from start time to event time
 
 
-BEEDAdata.respiration = MWdata(:,3)';
-BEEDAdata.EDAdata = MWdata(:,2)';
-BEEDAdata.sampletimes = MWdata(:,1)';
+BEEDAdata.respiration = BLdata(:,3)';
+BEEDAdata.EDAdata = BLdata(:,2)';
+BEEDAdata.sampletimes = BLdata(:,1)';
 
 event_nums = str2double(event_nums);
 
