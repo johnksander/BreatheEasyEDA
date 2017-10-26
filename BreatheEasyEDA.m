@@ -22,6 +22,6 @@ function BreatheEasyEDA
 
 
 %Start BEEDA 
-curr_dir = strsplit(mfilename('fullpath'),'BreatheEasyEDA');
+curr_dir = strsplit(which(mfilename('fullpath')),'BreatheEasyEDA.m');
 run(fullfile(curr_dir{1},'BEEDA','gui_files','startBEEDA.m'))
 
