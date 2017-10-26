@@ -286,18 +286,8 @@ scrub_button = uicontrol('Style','pushbutton','String','Remove artifacts','Units
                     spreadsheet_array = vertcat(header,spreadsheet_array);
                     
                     [sv_FileName,sv_PathName] = uiputfile('*','Save results');
-                    if isunix
-                        xlwritedir = fullfile(BEEDAdir,'20130227_xlwrite');
-                        addpath(xlwritedir)
-                        javaaddpath(fullfile(xlwritedir,'poi-3.8-20120326.jar'));
-                        javaaddpath(fullfile(xlwritedir,'poi-ooxml-3.8-20120326.jar'));
-                        javaaddpath(fullfile(xlwritedir,'poi-ooxml-schemas-3.8-20120326.jar'));
-                        javaaddpath(fullfile(xlwritedir,'xmlbeans-2.3.0.jar'));
-                        javaaddpath(fullfile(xlwritedir,'dom4j-1.6.1.jar'));
-                        xlwrite(fullfile(sv_PathName,sv_FileName),spreadsheet_array);
-                    elseif ispc
-                        xlswrite(fullfile(sv_PathName,sv_FileName),spreadsheet_array);
-                    end
+                    write2csv(fullfile(sv_PathName,sv_FileName),spreadsheet_array)
+                    
                 case 'stop'
                     %do nothing
                     
