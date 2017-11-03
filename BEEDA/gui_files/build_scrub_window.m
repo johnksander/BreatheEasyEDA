@@ -15,9 +15,17 @@ redcolor = colors(2,:);
 
 remove_pause = .1; %pause in seconds to fix major bug
 
-num_trials2plot = BEEDAdata.options.num_trials2plot; %now set in main menu, default is 4
 firsttrial2plot = 1;
-lasttrial2plot = BEEDAdata.options.num_trials2plot; %now set in main menu, default is 4
+total_trials = numel(BEEDAdata.TOI.index_end);
+if total_trials >= BEEDAdata.options.num_trials2plot
+    %initialize normally
+    num_trials2plot = BEEDAdata.options.num_trials2plot; %now set in main menu, default is 4
+    lasttrial2plot = BEEDAdata.options.num_trials2plot; %now set in main menu, default is 4
+elseif total_trials < BEEDAdata.options.num_trials2plot
+    %requested num_trials2plot is greater than number of TOIs... 
+    num_trials2plot = total_trials;
+    lasttrial2plot = total_trials;
+end
 
 %current_page = 1;
 
