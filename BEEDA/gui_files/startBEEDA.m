@@ -1,5 +1,6 @@
 function startBEEDA
 
+format compact
 global BEEDAdata
 
 [BEEDAmat_fn,BEEDAmat_path] = select_intro;
@@ -204,8 +205,14 @@ scrub_button = uicontrol('Style','pushbutton','String','Remove artifacts','Units
             disp('ERROR: Trials of interest must be defined first')
         else
             if ~isfield(BEEDAdata,'TOI')
+                %first call
                 BEEDAdata = get_trial_data(BEEDAdata); %rejection rate excluding located here
+                BEEDAdata = make_TOI_history(BEEDAdata);
+            else
+                %figure out if TOIs have changed, handle accordingly
+                BEEDAdata = control_TOI_data(BEEDAdata);
             end
+            
             build_scrub_window()
         end
     end

@@ -1,10 +1,11 @@
 function BEEDAdata = get_trial_data(BEEDAdata)
-%function BEEDAdata = get_trial_data(BEEDAdata)
+
 
 %end of trial is defined by beginning of the next event
 %find trials to plot
+current_types = BEEDAdata.options.trials_of_interest;
 trial_num_labels = cell2mat(BEEDAdata.event_array(:,2));
-TOI_mask = ismember(trial_num_labels,BEEDAdata.options.trials_of_interest);
+TOI_mask = ismember(trial_num_labels,current_types);
 TOI_starttimes = BEEDAdata.event_array(TOI_mask,1); %use for excluding SCRs below min latenency
 TOI_index_start = BEEDAdata.index_events(TOI_mask); %get startpoints
 TOI_end_indices = find(TOI_mask) + 1; %get index after start
@@ -102,6 +103,7 @@ if BEEDAdata.options.min_SCR_latency > 0 %remove SCL data below min latenency
     end
 end
 
+BEEDAdata.TOI.current_types = current_types;
 BEEDAdata.TOI.SCRs = TOI_SCRs;
 BEEDAdata.TOI.SCRs_index = TOI_SCRs_index; %index of original SCR list
 BEEDAdata.TOI.respiration_data = TOI_respiration_data;
