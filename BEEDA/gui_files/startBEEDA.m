@@ -93,6 +93,8 @@ save_button = uicontrol('Style','pushbutton','String','Save current dataset','Un
     'Position',[.75,.1,.2,.08],'Callback',@save_Callback,'FontSize',12,'FontWeight','bold');
 export_results_button = uicontrol('Style','pushbutton','String','Export final results','Units','normalized',...
     'Position',[.75,.01,.2,.07],'Callback',@export_results_Callback,'FontSize',12);
+IRR_button = uicontrol('Style','pushbutton','String','Inter-rater reliability','Units','normalized',...
+    'Position',[.53,.01,.2,.07],'Callback',@IRR_Callback,'FontSize',12);
 %------------------------------------------
 %scrub buttons-----------------------------
 
@@ -227,6 +229,16 @@ scrub_button = uicontrol('Style','pushbutton','String','Remove artifacts','Units
         %BEEDAdata.options = options;
         uisave('BEEDAdata')
     end
+
+
+%------------------------------------------
+%IRR button callback----------------------
+    function IRR_Callback(source,eventdata)
+        IRRinfo = IRR_intro();
+        doIRR(IRRinfo)
+    end
+
+
 
 %------------------------------------------
 %export results button callback------------
