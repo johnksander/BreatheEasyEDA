@@ -17,9 +17,8 @@ This documentation consists of:
 The main technical guide for installing, using, and troubleshooting this toolbox.
 ---BEEDA_psychonomics_poster
 Poster for this software presented at the 2016 Psychonomic Society, Boston, Massachusetts.  
----BEEDA_manuscript_proof
-This document contains a link to the submitted manuscript for this software. This link 
-will be added shortly. 
+---BEEDA_manuscript_link
+This file contains a link to the manuscript for this software. 
 ---Schneider_2003
 A useful guide for evaluating respiration artifacts. This document contains the DOI link 
 and reference for that guide.
@@ -32,7 +31,7 @@ exploring BEEDA functionality.
 ------------------------------------------------------------------------------------------
 ADDITIONAL INFORMATION
 
-If you find BEEDA helpful, please cite it as:
-*Citation coming after manuscript approval*
+If you find BEEDA helpful, please cite with information provided at:
+https://f1000research.com/articles/7-216/v1
 
 For any questions and comments, please e-mail jksander@brandeis.edu
