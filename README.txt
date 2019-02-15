@@ -32,6 +32,6 @@ exploring BEEDA functionality.
 ADDITIONAL INFORMATION
 
 If you find BEEDA helpful, please cite with information provided at:
-https://f1000research.com/articles/7-216/v1
+https://f1000research.com/articles/7-216/v2
 
 For any questions and comments, please e-mail jksander@brandeis.edu
