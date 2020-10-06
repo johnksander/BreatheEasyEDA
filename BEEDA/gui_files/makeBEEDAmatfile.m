@@ -102,6 +102,11 @@ switch use_call
         switch class(event_data.timestamp)
             case 'datetime'
                 %good
+            case 'duration'
+                warning(['the timestamps in %s do not have dates, BEEDA will add '...
+                    'today''s date to each timestamp. This may have unintended consequences.'],eventfile)
+                event_data.timestamp = datetime('today') + event_data.timestamp; 
+                event_data.timestamp = datetime(event_data.timestamp);
             otherwise
                 try
                     event_data.timestamp = datetime(event_data.timestamp);
